@@ -15,6 +15,9 @@ public class Cliente {
 	@Column(name = "cli_nome", nullable = true, length = 100)
 	private String nome;
 
+	@Column(name = "cli_email", nullable = true, length = 100)
+	private String email;
+
 	@Column(name = "cli_endereco", nullable = true, length = 200)
 	private String endereco;
 
@@ -27,6 +30,14 @@ public class Cliente {
 
 	@Lob
 	private String conteudo;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Long getIdCliente() {
 		return idCliente;
