@@ -2,17 +2,23 @@ package br.aula.model;
 
 import javax.persistence.*;
 
+@Entity
 public class Review {
 	@Id
 	@GeneratedValue
+	@Column(name = "id")
 	private Integer id;
-	
+
+	@Column(name = "avaliacao")
 	private Integer avaliacao;
-	
+
+	@Column(name = "comentario", nullable = true)
 	private String comentario;
-	
+
+	@ManyToOne
 	private Livro livroId;
-	
+
+	@ManyToOne
 	private Usuario usuarioId;
 
 	public Integer getId() {

@@ -3,6 +3,8 @@ package br.aula.model;
 import java.util.Date;
 import javax.persistence.*;
 
+@Entity
+@Table(name = "Emprestimo")
 public class Emprestimo {
 	@Id
 	@GeneratedValue
@@ -14,8 +16,10 @@ public class Emprestimo {
 	@Temporal(TemporalType.DATE)
 	private Date dataDevolucao;
 	
+	@ManyToOne
 	private Livro livroId;
 	
+	@ManyToOne
 	private Usuario usuarioId;
 
 	public Integer getId() {
